@@ -4,14 +4,14 @@ if (userName =='Admin'){
     if (password == 'TheMaster'){
         alert('Welcome!');
     }
-    else if (password == null){
+    else if (password ==""){
         alert('Canceled.');
     }
         else{
         alert('Wrong Password');
          }
 }
-else if (userName == null){
+else if (userName ==""){
     alert('Canceled.');
 }
     else{
