@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính chỉ số cân nặng</title>
+</head>
+
+<body>
+    <p>Cân nặng:</p>
+    <input type="number" id="nang">
+    <p>Chiều cao:</p>
+    <input type="number" id="cao">
+    <br><br>
+    <button type="button" onclick="myfunction()">Button</button>
+    <p id="demo">BMI:</p>
+    <script>
+        function myfunction() {
+            let weight = (document.getElementById("nang").value);
+            let height = (document.getElementById("cao").value);
+            let bmi = weight / (height ** 2);
+            if (bmi < 18) {
+                document.getElementById('demo').innerHTML = "Underweight";
+            }
+            else if (bmi < 25.0) {
+                document.getElementById('demo').innerHTML = "Normal";
+            }
+            else if (bmi < 30.0) {
+                document.getElementById('demo').innerHTML = "Overweight";
+            }
+            else {
+                document.getElementById('demo').innerHTML = "Obese";
+            }
+        }
+    </script>
+</body>
+
+</html>
