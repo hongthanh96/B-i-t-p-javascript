@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính số ngày trong một tháng</title>
+</head>
+<body>
+    <div>
+        <input id="A1" type="number" placeholder="Nhập tháng bất kì">
+        <input type="button" onclick="myfuntion()" value="Tính số ngày" name="">
+    </div>
+    <h3 id="demo"></h3>
+    <script>
+        function myfuntion(){
+            let month = parseInt(document.getElementById("A1").value);
+            switch (month){
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                document.getElementById("demo").innerHTML = "Tháng này có 31 ngày";
+                break;
+                case 2:
+                document.getElementById("demo").innerHTML = "Tháng 2 có 28 hoặc 29 ngày";
+                break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                document.getElementById("demo").innerHTML = "Tháng này có 30 ngày";
+                break;
+                default:
+                document.getElementById('demo').innerHTML = "Không có tháng này. Hãy nhập lại"
+            }
+
+        }
+    
+    
+    </script>
+        
+</body>
+</html>
