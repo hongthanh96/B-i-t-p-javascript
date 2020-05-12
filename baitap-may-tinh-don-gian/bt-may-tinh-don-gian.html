@@ -7,31 +7,37 @@
     <link rel="stylesheet" href="bt-may-tinh-don-gian.css">
 </head>
 <body>
-     <input id="result" type="text" value="" name="">
-      <div>
-         <button type="button" onclick="so1()" value="">1</button>
-         <button type="button" onclick="so2()" value="">2</button> 
-         <button type="button" onclick="so3()" value="">3</button> 
-         <button type="button" onclick="phepcong()" value="">+</button>
-        </div>
-      <div>
-        <button type="button" onclick="so4()" value="">4</button>
-        <button type="button" onclick="so5()" value="">5</button>
-        <button type="button" onclick="so6()" value="">6</button>
-        <button type="button" onclick="pheptru()" value="">-</button>
-    </div>
-    <div>
-        <button type="button" onclick="so7()" value="">1</button>
-        <button type="button" onclick="so8()" value="">2</button>
-        <button type="button" onclick="so9()" value="">3</button>
-        <button type="button" onclick="phepnhan()" value="">+</button>
-    </div>
-    <div>
-        <button type="button" onclick="C()" value="">C</button>
-        <button type="button" onclick="so0()" value="">0</button>
-        <button type="button" onclick="phepbang()" value="">=</button>
-        <button type="button" onclick="phepchia()" value="">/</button>
-    </div>
+    
+     <table>
+       <tr>
+         <td colspan="4"><input type="text" id="result"></td>
+       </tr>
+      <tr>
+         <td><button class="btn" type="button" value="1" onclick="result.value += this.value" >1</button></td>
+         <td><button class="btn" type="button" value="2" onclick="result.value += this.value" >2</button></td>
+         <td><button class="btn" type="button"  value="3" onclick="result.value += this.value" >3</button></td>
+         <td><button class="btn" type="button"  value="+" onclick="result.value += this.value">+</button></td>
+      </tr>
+      <tr>
+        <td><button class="btn" type="button" value="4" onclick="result.value += this.value">4</button></td>
+        <td><button class="btn" type="button" value="5" onclick="result.value += this.value">5</button></td>
+        <td><button class="btn" type="button" value="6" onclick="result.value += this.value">6</button></td>
+        <td><button class="btn" type="button" value="-" onclick="result.value += this.value">-</button></td>
+      </tr>
+      <tr>
+        <td><button class="btn" type="button" value="7" onclick="result.value += this.value">7</button></td>
+        <td><button class="btn" type="button" value="8" onclick="result.value += this.value">8</button></td>
+        <td><button class="btn" type="button" value="9" onclick="result.value += this.value">9</button></td>
+        <td><button class="btn" type="button" value="*" onclick="result.value += this.value">x</button></td>
+      </tr>
+      <tr>
+        <td><button class="btn" type="button" value="C" onclick="result.value=''" >C</button></td>
+        <td><button class="btn" type="button" value="0" onclick="result.value += this.value">0</button></td>
+        <td><button class="btn" type="button" value="=" onclick="result.value = eval(result.value)">=</button></td>
+        <td><button class="btn" type="button" value="/" onclick="result.value += this.value">/</button></td>
+     </tr>
+    </table>
+     
 
   </table>
 </form>

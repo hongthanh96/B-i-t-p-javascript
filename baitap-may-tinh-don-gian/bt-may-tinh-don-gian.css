@@ -1,4 +1,18 @@
-fieldset{
-    width: 500px;
-    height: 500px;
+table{
+    background-color:dimgray;
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    border: black 5px solid;
+}
+.btn{
+    width: 50px;
+    height: 45px;
+    font-size: x-large;
+    font-weight: 700;
+}
+#result{
+    width: 260px;
+    height: 40px;
 }
