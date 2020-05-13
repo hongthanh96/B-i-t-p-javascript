@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> BT Số ngyên tố</title>
+</head>
+<body>
+    
+    <script>
+        let pricenum = parseInt(prompt('Nhập vào số lượng số nguyên tố đầu tiên cần in ra '));
+        let count = 0;
+       
+        let num = 2;
+        if (pricenum == 0){
+            alert ('Hãy nhập vào số lớn hơn 0!');
+        }
+        else if (pricenum == 1){
+             Console.log('số '+ 2);
+        }
+        else {
+            while (count < pricenum){
+                let flag = true;
+                for (let i = 2; i < num; i++){
+                
+                    if (num % i === 0){
+                        flag = false;
+                        break;
+                    }
+                }
+                if (flag == true){
+                    console.log(num + "<br>");
+                    count++;
+                    
+                }
+                num++;
+
+            }
+           
+        }
+    </script>
+
+</body>
+</html>
