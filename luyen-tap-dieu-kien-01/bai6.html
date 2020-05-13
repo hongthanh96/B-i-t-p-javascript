@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 6</title>
+</head>
+<body>
+    <p>Doanh số bán hàng: </p>
+    <input type="number" id="ds" placeholder="Nhập doanh số bán hàng" value="" name=""><br><br>
+    <button type="button" onclick="myfunction()" name="doanhso" value="doanhso">Submit</button>
+    <p id="demo"></p>
+</body>
+    <script>
+        function myfunction(){
+            let money = document.getElementById("ds").value;
+            const A = 0.01;
+            const B = 0.02;
+            const C = 0.05;
+            let kq;
+            if (money >=1000000){
+                kq = money * C;
+            }
+            else if (money >= 500000){
+                kq = money * B;
+            }
+            else {
+                kq = money * A;
+            }
+            document.getElementById('demo').innerHTML = "Tiền hoa hồng nhận được: " + kq + "VND";
+
+        }
+    </script>
+</body>
+</html>

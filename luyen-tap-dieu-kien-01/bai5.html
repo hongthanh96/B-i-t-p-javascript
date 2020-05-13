@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5</title>
+</head>
+<body>
+    <p>Điểm kiểm tra:</p>
+    <input type="number" placeholder="Nhập vào điểm kiểm tra" name="" id="num1">
+    <p>Điểm thi giữa kì:</p>
+    <input type="number" placeholder="Nhập vào điểm thi giữa kì" name="" id="num2">
+    <p>Điểm thi cuối kì:</p>
+    <input type="number" placeholder="Nhập vào điểm thi cuối kì" name="" id="num3"><br><br>
+    <button type="button" onclick="myfunction1()" value="" name="">Kết quả</button>
+    
+    <p id="demo"></p>
+    <p id="demo2" ></p>
+
+    <script>
+        function myfunction1(){
+            let num1 = parseInt(document.getElementById("num1").value);
+            let num2 = parseInt(document.getElementById("num2").value);
+            let num3 = parseInt(document.getElementById("num3").value);
+            let tb;
+            
+            tb = (num1 + num2*2 + num3*3)/6;
+            document.getElementById("demo").innerHTML = "Điểm trung bình cộng: "+ tb;
+            
+            if (tb >= 8){
+                document.getElementById("demo2").innerHTML = "Xếp loại giỏi";
+                }
+            else if (tb >= 6.5){
+                document.getElementById("demo2").innerHTML = "Xếp loại khá";
+            }
+            else{
+                document.getElementById("demo2").innerHTML = "Xếp loại trung bình";
+
+            }
+
+        }
+
+         
+
+
+       
+
+
+        
+    </script>
+</body>
+</html>

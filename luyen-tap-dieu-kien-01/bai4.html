@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4</title>
+</head>
+<input type="number" placeholder="Nhập vào số thứ nhất" name="" id="num1"><br>
+<input type="number" placeholder="Nhập vào số thứ hai" name="" id="num2"><br>
+<input type="number" placeholder="Nhập vào số thứ ba" name="" id="num3"><br>
+
+<button type="button" onclick="myfunction()" value="" name="">Submit</button>
+<p id="demo"></p>
+
+    <script>
+        function myfunction(){
+            let num1 = +document.getElementById("num1").value;
+            let num2 = +document.getElementById("num2").value;
+            let num3 = +document.getElementById("num3").value;
+            let max;
+            if (num1 > num2){
+                if (num1 > num3){
+                    max = num1;
+                }
+                else {
+                    max = num3;
+                }
+            }
+            else if (num2 > num3){
+                max = num2;
+            }
+            else {
+                max = num3;
+            }
+            document.getElementById("demo").innerHTML = "Số lớn nhất là: " + max;
+        }
+    </script>
+
+        
+        
+</body>
+</html>
