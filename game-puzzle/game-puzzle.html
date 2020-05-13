@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Game Puzzle</title>
+        <link rel="stylesheet" href="game-puzzle.css">
+    </head>
+    <body>
+        <img src="gau1.jpg" alt="gau1" onclick="panda1()" id="h1"> 
+        <img src="gau2.jpg" alt="gau2" onclick="panda2()" id="h2">
+        
+      <script>
+        function panda1(){
+            let image1 = document.getElementById("h1");
+            if (image1.alt ==="gau1"){
+                document.getElementById("h1").src="meo1.jpg";
+                document.getElementById("h1").alt="meo1";
+            }
+            else{
+                document.getElementById("h1").src="gau1.jpg";
+                document.getElementById("h1").alt="gau1";
+
+            }
+        
+        }
+        function panda2(){
+            let image2 = document.getElementById("h2");
+            if(image2.alt==="gau2"){
+                document.getElementById("h2").src="meo2.jpg";
+                document.getElementById("h2").alt="meo2";
+            }
+            else{
+                document.getElementById("h2").src="gau2.jpg";
+                document.getElementById("h2").alt="gau2";
+            }
+        }
+
+            </script>
+
+
+    </body>
+</html>
