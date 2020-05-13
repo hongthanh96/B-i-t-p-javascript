@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do you love me</title>
+</head>
+<body>
+    <h1>Do you love me?</h1>
+    <button id="yes" type="button" onclick="function1()" value="">YES</button>
+    <button id="no" type="button" onmouseover="function2()" style="position: relative;left:0px; top: 0px;">NO</button>
+
+    <script>
+        let result1 = document.getElementById("yes");
+        let result2 = document.getElementById("no");
+      
+        function function1(){
+            alert('Yes. You are right!');
+        }
+        function function2(){
+            
+            result2.style.left = Math.random()*500 + "px";
+            result2.style.top = Math.random()*500 + "px";
+            
+        }
+
+        
+            
+
+    </script>
+    
+</body>
+</html>
