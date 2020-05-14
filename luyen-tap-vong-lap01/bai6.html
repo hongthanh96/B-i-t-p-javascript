@@ -3,27 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bài 6</title>
+    <title>Tính tổng của 30 số đầu tiên chia hết cho 7</title>
 </head>
 <body>
     
     <script>
         let cout = 0;
-        let n = 1;
         let sum = 0;
-            for (let i = 0; i < n ; i++){
+            for (let i = 0; cout < 30 ; i++){
                 if (i % 7 ===0){
-                    console.log (i);
+                    document.write (i + "<br>");
                     cout++; 
                     sum = sum + i; 
                 }
-                if (cout === 30){
-                    break;
-                }
-                n++;
-            
             }
-            console.log ("Tổng: " + sum)
+            document.write ("Tổng là: " + sum)
            
     </script>
 </body>

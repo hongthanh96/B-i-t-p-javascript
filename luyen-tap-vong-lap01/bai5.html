@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính tổng của 20 số đầu tiên trong fibonacci</title>
+</head>
+<body>
+    
+    <script>
+        let i,j;
+        let k = 1;
+        let cout = 0
+        let sum = 0;
+        for (i = 0, j = 1; cout < 20 ;k = i + j){
+            document.write (i + "<br>");
+            sum += i;
+            cout++;
+            i = j;
+            j = k;
+        }
+        document.write ('Tổng của 20 số đầu tiên trong dãy fibonacci: '+ sum)
+    </script>
+</body>
+</html>
