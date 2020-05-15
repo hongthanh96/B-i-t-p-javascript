@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+</head>
+<body>
+
+    <script>
+        let num = prompt('Nhập vào dãy số bạn muốn: ');
+        let array = [num[0]];
+        let leng = num.length;
+        for (i = 1; i< leng; i++){
+            if (num[i] % 2 === 0 && num[i-1] % 2 === 0){
+                array.push('-',num[i])
+            }
+            else{
+                array.push(num[i]);
+            }
+        }
+        alert(array.join(""));
+    </script>
+    
+</body>
+</html>
