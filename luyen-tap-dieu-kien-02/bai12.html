@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính lãi ngân hàng</title>
+</head>
+<body>
+
+    <script>
+        let tienvay = parseInt(prompt('Nhập số tiền (Triệu đồng) bạn vay: '));
+        let thangvay = parseInt(prompt('Nhập số THÁNG bạn đã vay: '));
+        let laixuat = parseFloat(prompt('Nhập số lãi xuât hàng tháng: '));
+        let tientra;
+        let tienlai;
+       do{
+            tienlai = tienvay * laixuat;
+            tientra = tienvay + tienlai;
+            tienvay = tientra;
+            thangvay--;
+        }
+        while (thangvay > 0)
+        alert('Tổng số tiền bạn phải trả (đã tính lãi): ' + tientra + " VNĐ");
+        
+    </script>
+    
+</body>
+</html>

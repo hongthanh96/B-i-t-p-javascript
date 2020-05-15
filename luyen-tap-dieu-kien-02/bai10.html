@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính giá điện</title>
+</head>
+<body>
+    <script>
+        let num = parseInt(prompt('Nhập số chữ điện bạn đã dùng: '))
+        let money;
+        if (num < 10){
+            money = num * 2000;
+        }
+        else if (num < 20){
+            money = num * 3000;
+        }
+        else {
+            money = num * 5000
+        }
+        alert ("Giá điện bạn phải trả là: " + money + "VNĐ")
+    </script>
+    
+</body>
+</html>

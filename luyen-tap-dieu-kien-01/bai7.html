@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính cước điện thoại</title>
+</head>
+<body>
+
+    <script>
+            let time = parseInt(prompt('Nhập số PHÚT cuộc gọi đã sử dụng: '));
+            let money;
+            if ( time < 0.1){
+                money = time * 2000;
+            }
+            else if ( time < 1){
+                money = time * 1500;
+            }
+            else{
+                money = time * 1000;
+            }
+            alert ('Số tiền cước phải trả: '+ money + "VNĐ")
+        
+
+    </script>
+    
+</body>
+</html>
