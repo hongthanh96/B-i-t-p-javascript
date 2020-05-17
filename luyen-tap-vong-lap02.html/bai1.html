@@ -8,8 +8,15 @@
 <body>
     
     <script>
+        let cout = parseInt(prompt('Nhập số lượng bạn muốn in ra từ dãy fibonacci: '));
         let i,j;
         let k = 1;
+        for (i = 0, j = 0; i < cout ; k = i + j ){
+            document.write(i + " ");
+            i = j;
+            j = k;
+            cout++;
+        }
     </script>
 
 </body>

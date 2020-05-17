@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển chữ thường sang chữ hoa</title>
+</head>
+<body>
+
+    <script>
+        let str = prompt('Nhập vào một chuỗi có chữ thường và chữ HOA');
+        let upper = 'QWERTYUIOPASDFGHJKLZXCVBNM';
+        let lower = 'qwertyuiopasdfghjklzxcvbnm';
+        let array = [];
+        let len = str.length;
+        for (i = 0; i < len; i++){
+            if (upper.indexOf(str[i]) !== -1){
+                array.push(str[i].toLowerCase());
+            }
+            else if (lower.indexOf(str[i]) !== -1){
+                array.push(str[i].toUpperCase());
+            }
+            
+            else{
+                array.push(str[i]);
+            }
+        }
+        alert(array.join(""))
+    </script>
+</body>
+</html>
