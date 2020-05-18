@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bài 3</title>
+</head>
+<body>
+
+    <script>
+        let num = [1,6,7,10,5,6,8,20,45,2]
+        let len = num.length;
+        let max = num[0];
+        let sum = 0;
+        let ave;
+        let j;
+        for(let i = 0; i < len; i++){
+            if (max < num[i]){
+                max = num[i];
+                j = i;
+            }
+           sum = sum + num[i];
+        }
+        ave = sum/len;
+
+        console.log ('Dãy số: ' + num);
+        console.log ('Số lớn nhất là: ' + max + ' có chỉ số index = ' + j)
+        console.log('Giá trị trung bình của dãy số này là: '+ ave)
+
+    </script>
+    
+</body>
+</html>

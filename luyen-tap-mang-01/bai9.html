@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 9</title>
+</head>
+<body>
+
+    <script>
+        let num1 = prompt('Nhập vào dãy số thứ nhất bạn muốn: ');
+        let num2 = prompt('Nhập vào dãy số thứ 2 bạn muốn: ');
+        let len1 = num1.length;
+        let len2 = num2.length;
+        let a = [];
+        let b = [];
+        for( i = 0; i < len1; i++){
+            a.push(num1[i])
+        }
+        for (j = 0; j < len2; j++){
+            b.push(num2[j]);
+        }
+        let c = a.concat(b);
+        console.log('Chuỗi A: ' + a);
+        console.log('Chuỗi B:' + b);
+        console.log('Chuỗi C: '+ c);
+
+    </script>
+    
+</body>
+</html>

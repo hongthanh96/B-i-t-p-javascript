@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập từ điển</title>
+</head>
+<body>
+    <p>Nhập từ cần tìm kiếm: </p>
+    <input type="text" name="search" placeholder="Nhập từ cần tra từ điển" id = "search">
+    <button type="button" value="Tìm kiếm" onclick="myfunction()">Tìm kiếm</button>
+    <div id = "demo">kq: </div>
+
+    <script>
+        function myfunction(){
+            let name = document.getElementById("search").value;
+            let eng = ["book","note book","pen","pencil","rule"];
+            let vn = ["sách","vở","bút mực","bút chì","thước kẻ"];
+            let len = eng.length;
+            let array = [];
+            let flag = true;
+
+            for(i = 0; i < len; i++){
+                
+                if (eng[i] == name){
+                    array.push(vn[i]);
+                    flag = false;
+                    break;
+                }
+                else if (vn[i] == name){
+                    array.push(eng[i]);
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag == true){
+                    alert('KHÔNG tìm thấy từ bạn cần tìm');
+                }
+            document.getElementById('demo').innerHTML = array
+       
+        }
+       
+
+    </script>
+</body>
+</html>

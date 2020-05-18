@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 7</title>
+</head>
+<body>
+
+    <script>
+        let num1 = prompt('Nhập vào DÃY SỐ mà bạn muốn: ');
+        let array = [];
+        let num2 = prompt('Nhập vào một SỐ V bạn muốn kiểm tra: ');
+        let len = num1.length;
+        let j = 0;
+        for(let i = 0; i < len; i++){
+            array.push(num1[i]);
+            if (array[i] === num2){
+                j = i;
+                for(let k = j; k < len - 1; k++){
+                    array[k] = num1[k+1];
+                    }
+                array[len - 1] = '0'; 
+                break;
+                  
+                }
+        }
+        console.log('Dãy số: ' + num1);
+        console.log('số bạn tìm: '+ num2)
+        console.log(array)
+    </script>
+    
+</body>
+</html>
