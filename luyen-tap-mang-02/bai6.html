@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 6</title>
+</head>
+<body>
+    
+    <script>
+        let str = prompt('Nhập vào một chuỗi kí tự: ');
+        let len = str.length;
+        let array = [];
+        for( i = 0; i < len; i++){
+            if (str[i] === '-'){
+                array[i] = '_'
+            }
+            else{
+                array[i]= str[i]
+            }
+        }
+        console.log ('chuỗi bạn nhập: ' + str);
+        console.log('Chuỗi thay đổi: ' +array.join('') );
+    </script>
+</body>
+</html>

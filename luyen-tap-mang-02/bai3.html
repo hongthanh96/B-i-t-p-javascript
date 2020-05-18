@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+</head>
+<body>
+    
+    <script>
+        let str = prompt('Nhập vào một chuỗi gồm số và ký tự mà bạn muốn: ');
+        let number = '1234567890';
+        let len = str.length;
+        sum = 0;
+        for(i =0; i < len; i++){
+            if (number.indexOf(+str[i]) !== -1){
+                sum++;
+            }
+        }
+        console.log('Dãy kí tự chữ và số bạn nhập: ' + str);
+        console.log('Có' + sum + 'kí tự số bạn đã nhập');
+
+    </script>
+</body>
+</html>
