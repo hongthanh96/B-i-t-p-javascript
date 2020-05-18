@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi nhiệt độ</title>
+    
+</head>
+<body>
+    <h2>Temperature Converter</h2>
+    Fahrenheit: <label for="Fahrenheit"><input type="number" id = "Fah" oninput="myfunction()"></label>
+    <div>
+        <p>Celcius:</p>
+        <p id ='demo'></p>
+    </div>
+
+
+<script>
+    function Celcius(Fahrenheit){
+        return (Fahrenheit - 32)/1.8;
+    }
+    function myfunction(){
+        let F = document.getElementById('Fah').value;
+        let C = Celcius(F);
+        document.getElementById('demo').innerHTML = C;
+
+    }
+</script>
+</body>
+</html>
