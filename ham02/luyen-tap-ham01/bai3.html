@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+</head>
+<body>
+    <script>
+        let num1,num2;
+        function sum2num(num1, num2){
+           do{
+            num1 = parseFloat(prompt('Nhập số thứ nhất: '));
+            num2 = parseFloat(prompt('Nhập số thứ 2: '))
+           }
+           while(num1 < num2)
+           return num1 + num2
+        }
+        alert('Tổng 2 số bạn nhập = ' + sum2num(num1,num2))
+    </script>
+</body>
+</html>
