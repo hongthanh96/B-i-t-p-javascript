@@ -11,14 +11,14 @@
         let str = prompt('Nhập chuỗi kí tự số và chữ mà bạn muốn: ');
         let len = str.length;
         let kt = 'qwertyuiopasdfghjklzxcvbnm'
-        let sum = 0;
+        let count = 0;
         for (i = 0; i < len; i++){
-            if (kt.indexOf(str[i]) !== -1){
-                sum++;
+            if (kt.indexOf(str[i]) !== -1 && str[i] !==" "){
+                count++;
             }
         }
         console.log('Dãy số bạn nhập: ' + str);
-        console.log('Có ' + sum + 'kí tự chữ bạn đã nhập');
+        console.log('Có ' + count + 'kí tự chữ bạn đã nhập');
     </script>
     
 </body>
