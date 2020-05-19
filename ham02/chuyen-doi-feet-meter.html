@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi giữa feet và meter</title>
+</head>
+<body>
+    
+    <script>
+        let kq = 0;
+        let str;
+        do{
+            str= parseInt(prompt('Nhập vào sô 1 nếu bạn muốn đổi từ feet. Nhập vào số 0 nếu bạn đổi từ meter'));
+        }
+        while(str !== 1 && str !== 0)
+        let promM = parseFloat(prompt('Nhập số muốn đổi :'))
+        if (str === 1){
+            kq = feetToMeter(promM).toFixed(3);
+        }
+        if (str === 0){
+            kq = meterToFeet(promM).toFixed(3);
+        }
+        if( str ===1){
+        document.write(promM + ' meter = ' + kq + ' feet')
+        }
+        else{
+            document.write(promM + ' feet = ' + kq + ' meter')
+        }
+
+        function feetToMeter(feet){
+            return feet * 0.305
+        }
+        function meterToFeet(meter){
+            return meter * 3.279
+        }
+
+    </script>
+</body>
+</html>
