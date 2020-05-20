@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+</head>
+<body>
+
+    <script>
+        let kq = 1;
+        function giaithua(num){
+            for(let i = 1; i <= num; i++){
+             kq = kq * i;
+            }
+            return kq
+            
+        }
+        let num = parseInt(prompt('Nhập vào số bạn muốn tính giai thừa'));
+        alert(num + '! = ' + giaithua(num))
+    </script>
+    
+</body>
+</html>

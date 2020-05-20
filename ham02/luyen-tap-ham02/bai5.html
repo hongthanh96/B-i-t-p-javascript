@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5</title>
+</head>
+
+<body>
+    <script>
+        function minnum(num1, num2, num3) {
+            let min = num1;
+            if (num2 < min) {
+                min = num2
+            }
+            else if(num3 < min){
+                min = num3
+            }
+            else{
+            min = num1
+            }
+            return min;
+        }
+        let num1 = parseInt(prompt('Nhập số thứ nhất:'))
+        let num2 = parseInt(prompt('Nhập số thứ nhất:'))
+        let num3 = parseInt(prompt('Nhập số thứ nhất:'))
+        let minnumber = minnum(num1, num2, num3)
+        document.write('Số nhỏ nhất trong 3 số bạn nhập là: ' + minnumber)
+    </script>
+</body>
+
+</html>
