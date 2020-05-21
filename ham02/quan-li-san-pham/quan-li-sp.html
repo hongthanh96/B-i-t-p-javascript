@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hàm quản lí sản phẩm</title>
+    <link rel="stylesheet" href="quan-li-sp.css">
+</head>
+<body>
+<fieldset>
+    
+    <header>
+        <div class="header">
+            <h2>Add New Product</h2>
+            <form onsubmit="return false">
+                <label><input type="text" id = 'new' placeholder="New Product"></label>
+                <button type="button" id = 'add' onclick="addProduct()">Add</button> 
+            </form>
+        </div>
+    </header>
+    <header class="header">
+        <h3>Display All Product</h3>
+        <div id="demo1">
+            <div class="col-8"> Product Name</div>
+            <div id ='demo' class="col-2"></div>
+        </div>
+        <br>
+    </header>
+    <section id="section">
+ <!-- <div class="row" id = 'row'>
+            <div class="col-8">
+                <p>Sony Xperia</p>
+                <input type = "text" id = 'demo' placeholder="Nhập tên bạn muốn đổi" name=" ">
+            </div>
+            
+            <div class = "col-2"><button class = "col-2" class="edit" onclick="edit()">Edit</button></div>
+            <div class = "col-2"><button class = "col-2" class="delete" onclick="deletee()">Delete</button></div>
+    </div> -->
+
+
+    </section>
+</fieldset>
+    
+    
+
+
+
+
+    <script src="quan-li-sp.js"></script>
+</body>
+</html>
