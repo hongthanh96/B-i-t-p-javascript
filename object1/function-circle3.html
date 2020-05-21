@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function circle 2</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="1350px" height="650px" style="border: 2px black solid"></canvas>
+
+    <script>
+        let x, y;
+        let ctx = document.getElementById('myCanvas').getContext('2d');
+        function Cirle(x, y, radius) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+        }
+        function randomHex() {
+            return Math.floor(Math.random() * 255);
+        }
+        function randomColor() {
+            let red = randomHex();
+            let blue = randomHex();
+            let green = randomHex();
+            return "rgb(" + red + "," + blue + "," + green + ")";
+        }
+        function createCircle(i) {
+            ctx.beginPath();
+            ctx.arc(mangX[i], mangY[i], mangBanKinh[i], 0, 2 * Math.PI);
+            ctx.fillStyle = mangMau[i];
+            ctx.fill();
+            mangX[i] += Math.round(Math.random() * 10);
+            mangY[i] += Math.round(Math.random() * 10);
+            if (mangX[i]> 1350) mangX[i]=0;
+            if (mangY[i]> 650) mangY[i]=0;
+        }
+
+
+        let mangX = [];
+        let mangY = [];
+        let mangBanKinh = [];
+        let mangMau = [];
+        let radius;
+        let color;
+        for (let i = 0; i < 30; i++) {
+            x = Math.random() * window.innerWidth;
+            mangX.push(x);
+            y = Math.random() * window.innerHeight;
+            mangY.push(y);
+            radius = Math.round(Math.random() * 100);
+            mangBanKinh.push(radius);
+            color = randomColor();
+            mangMau.push(color);
+        }
+
+        setInterval(function(){
+            ctx.clearRect(0,0,1350,650);
+            for(i=0;i<30;i++){
+                createCircle(i)
+            }
+           
+        },200)
+
+
+
+    </script>
+
+</body>
+
+</html>

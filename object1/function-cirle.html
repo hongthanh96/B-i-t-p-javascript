@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function cirle</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="500px" height="500px" style="border: 2px black solid"></canvas>
+
+    <script>
+        function Cirle(x,y,radius){
+            this.x = x;
+            this.y =y;
+            this.radius = radius;
+        }
+        function randomHex(){
+            return Math.floor(Math.random()*255);
+        }
+        function randomColor(){
+            let red = randomHex();
+            let blue = randomHex();
+            let green = randomHex();
+            return "rgb(" + red + "," + blue + "," + green +")";
+        }
+        function createCircle (){
+            let ctx = document.getElementById('myCanvas').getContext('2d');
+            let radius = Math.round(Math.random()*240)
+            let color = randomColor();
+            let cirle = new Cirle(250,250,radius);
+            let x = Math.random()* window.innerWidth;
+            let y = Math.random()* window.innerHeight;
+            ctx.beginPath();
+            ctx.arc(cirle.x,cirle.y,radius,0,2*Math.PI);
+            
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
+        createCircle();
+        createCircle();
+        createCircle();
+        createCircle();
+    </script>
+    
+</body>
+</html>

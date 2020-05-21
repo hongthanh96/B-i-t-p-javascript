@@ -1,0 +1,38 @@
+<canvas id="myCanvas" width="1350px" height="650px" style="border: 2px black solid"></canvas>
+
+<script>
+    let x,y;
+    function Cirle(x,y,radius){
+        this.x = x;
+        this.y =y;
+        this.radius = radius;
+    }
+    function randomHex(){
+        return Math.floor(Math.random()*255);
+    }
+    function randomColor(){
+        let red = randomHex();
+        let blue = randomHex();
+        let green = randomHex();
+        return "rgb(" + red + "," + blue + "," + green +")";
+    }
+    function createCircle (){
+        let ctx = document.getElementById('myCanvas').getContext('2d');
+        let radius = Math.round(Math.random()*200)
+        let color = randomColor();
+        let cirle = new Cirle(x,y,radius);
+        x = Math.random()* window.innerWidth;
+        y = Math.random()* window.innerHeight;
+        ctx.beginPath();
+        ctx.arc(cirle.x,cirle.y,radius,0,2*Math.PI);
+        
+        ctx.fillStyle = color;
+        ctx.fill();
+    }
+    function createMulpilCircle(){
+        for( i = 0; i < 30; i++){
+            createCircle();
+        }
+    }
+    createMulpilCircle()
+</script>
