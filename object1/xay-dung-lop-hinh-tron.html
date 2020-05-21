@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xây dựng lớp hình tròn</title>
+</head>
+<body>
+    
+
+    <script>
+        let Circle = function(radius,color){
+            this.radius = radius,
+            this.color = color,
+            this.Circle = function(){
+                this.radius = radius,
+                this.color = color
+            }
+            this.getRadius = function(){
+                this.radius = radius
+            }
+            this.getArea = function(){
+                return this.radius * this.radius * Math.PI
+            }
+        }
+        let cirle = new Circle(2,'red');
+        let area = cirle.getArea().toFixed(3);
+        let col = cirle.color
+        alert('Hình tròn có diện tích = ' + area + ' màu ' + col)
+    </script>
+</body>
+</html>
