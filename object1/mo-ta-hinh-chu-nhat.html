@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mô tả hình chữ nhật</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <canvas id = 'myCanvas' width="500px" height="500px" style="border: white solid 1px;"></canvas>
+
+
+    <script>
+        let ctx = document.getElementById('myCanvas').getContext("2d");
+        let x,y
+        function  Rectangle(x,y){
+              this.x = x,
+              this.y = y,
+              this.arae = function(){
+                  return this.x * this.y;
+              }
+              this.perimeter = function(){
+                  return (this.x + this.y) * 2;
+              }
+        }
+        function RandomColor(){
+            let red = Math.floor(Math.random()*255);
+            let blue = Math.floor(Math.random()*255);
+            let green = Math.floor(Math.random()*255);
+            return "rgb(" + red + "," + blue + "," + green +")";
+        }
+        let rectangle = new Rectangle(300,100)
+        function CreateHCN(){
+            let color = RandomColor();
+            ctx.fillStyle = color;
+            ctx.fillRect(20,20,rectangle.x,rectangle.y);
+            
+            ctx.fill();
+            
+            
+        }
+        document.getElementById('demo').innerHTML = 'Hình chữ nhật có chiều dài = '+ rectangle.x + ' chiều rộng = ' + rectangle.y + '<br>'
+        document.addEventListener('click',myfunction);
+        function myfunction(){
+            document.getElementById('myCanvas').innerHTML = CreateHCN();
+        }
+
+
+
+
+    </script>
+    
+</body>
+</html>
