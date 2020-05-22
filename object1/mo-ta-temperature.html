@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mô tả temperature </title>
+</head>
+
+<body>
+
+    <script>
+        function temperature(celcius) {
+            this.x = celcius;
+
+            this.Fahrenheit = function () {
+                return this.x * 1.8 + 32;
+            }
+            this.Kelvin = function () {
+                return this.x + 273
+            }
+        }
+
+
+
+
+        let selec;
+        do {
+            selec = parseInt(prompt('Bạn muốn đổi sang KELVIN.Nhập 1 nếu muốn đổi từ độ C. Nhập f nếu muốn đổi từ độ F'))
+        }
+        while (selec !== 1 && selec !== 0)
+        
+        let celcius = parseInt(prompt('Nhập độ C muốn đổi: '));
+        let temper = new temperature(celcius);
+        let doF,doK;
+        if (selec === 1) {
+            doF = temper.Fahrenheit();
+            alert('Độ F = ' + doF)
+        }
+        else {
+            doK = temper.Kelvin();
+            alert('Độ kelvin = ' + doK);
+        }
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
