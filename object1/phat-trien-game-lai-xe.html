@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phát triển game lái xe</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="1000" height="600" style="border: black 1px solid;"></canvas>
+    <img src="f1-car.png" alt="urro" id="myCar" style="display: none;">
+    <img src="octopus.png" alt="urro2" id="myOctopus" style="display: none;">
+    <img src="bee.png" alt="urro3" id="myBee" style="display: none;">
+    <img src="fish.png" alt="urro4" id="myFish" style="display: none;">
+    <img src="yauquai.png" alt="urro5" id="myQuai" style="display: none;">
+
+
+    <script>
+
+
+        function Car(x, y, width, height) {
+            this.x = x,
+                this.y = y,
+                this.width = width,
+                this.height = height
+        }
+
+        let Car1 = new Car(200, 200, 300, 300);
+
+
+
+
+        // function DrawCar() {
+        //     ctx.drawImage(img1, Car1.x, Car1.y, Car1.width, Car1.height)
+        // }
+        window.onload = function () {
+            let ctx = document.getElementById('myCanvas').getContext("2d");
+            let img1 = document.getElementById('myCar');
+            let img2 = document.getElementById('myOctopus');
+            let img3 = document.getElementById('myBee');
+            let img4 = document.getElementById('myFish');
+            let img5 = document.getElementById('myQuai');
+            ctx.drawImage(img1, Car1.x, Car1.y, Car1.width, Car1.height)
+            ctx.drawImage(img2, 60, 200, 70, 70);
+            ctx.drawImage(img3, 700, 300, 70, 60);
+            ctx.drawImage(img4, 400, 50, 70, 60);
+            ctx.drawImage(img5, 300, 500, 70, 60);
+
+        }
+        Ca1();
+        function moveRight() {
+            Car1.x += 3;
+        }
+        function moveLeft() {
+            Car1.x -= 3;
+        }
+        function moveUp() {
+            Car1.y -= 3;
+        }
+        function moveDown() {
+            Car1.y += 3;
+        }
+        // function speed() {
+
+        // }
+
+
+        function keyDown(e) {
+            console.log("keyDown -> e", e)
+            switch (e.keyCode) {
+                case 39:
+                    moveRight();
+                    break;
+                case 37:
+                    moveLeft();
+                    break;
+                case 38:
+                    moveUp();
+                    break;
+                case 40:
+                    moveDown();
+                    break;
+                // case 17:
+                //     speed();
+                //     break;
+
+            }
+        }
+        document.addEventListener("keydown", keyDown);
+
+
+
+
+
+
+    //    function reateCar(){
+    //        let image1 = document.getElementById('f1-car');
+    //        ctx.
+    //    }
+
+    </script>
+</body>
+
+</html>

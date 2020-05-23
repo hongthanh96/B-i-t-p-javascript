@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xây dựng mô tả điện thoại</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="1350px" height="650px" style="border: black 2px solid;"></canvas>
+    <img src="iphone.png" id="dt1" alt = "orro" width="200px" height = "300px" style="display: none;">
+    <img src="nokia.png" id="dt2" alt="orro" width="200px" height="300px" style="display: none;">
+
+
+    <script>
+     
+
+     window.onload = function(){
+        let ctx = document.getElementById('myCanvas').getContext('2d')
+         let image = document.getElementById('dt1');
+         let image2 = document.getElementById('dt2');
+         ctx.drawImage(image,30,50,200,300)
+         ctx.drawImage(image2,300,50,200,300)
+     }
+
+    </script>
+</body>
+</html>

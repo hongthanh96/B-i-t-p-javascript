@@ -21,26 +21,29 @@
             }
         }
 
-
-
-
         let selec;
         do {
             selec = parseInt(prompt('Bạn muốn đổi sang KELVIN.Nhập 1 nếu muốn đổi từ độ C. Nhập f nếu muốn đổi từ độ F'))
         }
         while (selec !== 1 && selec !== 0)
-        
+
         let celcius = parseInt(prompt('Nhập độ C muốn đổi: '));
-        let temper = new temperature(celcius);
-        let doF,doK;
-        if (selec === 1) {
-            doF = temper.Fahrenheit();
-            alert('Độ F = ' + doF)
+        if (celcius < -273) {
+            alert('Hãy Nhập vào độ C lớn hơn -273')
         }
         else {
-            doK = temper.Kelvin();
-            alert('Độ kelvin = ' + doK);
+            let temper = new temperature(celcius);
+            let doF, doK;
+            if (selec === 1) {
+                doF = temper.Fahrenheit();
+                alert('Độ F = ' + doF)
+            }
+            else {
+                doK = temper.Kelvin();
+                alert('Độ kelvin = ' + doK);
+            }
         }
+
 
 
 
