@@ -17,6 +17,12 @@
 
 
     <script>
+         let ctx = document.getElementById('myCanvas').getContext("2d");
+            let img1 = document.getElementById('myCar');
+            let img2 = document.getElementById('myOctopus');
+            let img3 = document.getElementById('myBee');
+            let img4 = document.getElementById('myFish');
+            let img5 = document.getElementById('myQuai');
 
 
         function Car(x, y, width, height) {
@@ -24,6 +30,7 @@
                 this.y = y,
                 this.width = width,
                 this.height = height
+                this.speed = 2
         }
 
         let Car1 = new Car(200, 200, 300, 300);
@@ -31,24 +38,33 @@
 
 
 
-        // function DrawCar() {
-        //     ctx.drawImage(img1, Car1.x, Car1.y, Car1.width, Car1.height)
-        // }
-        window.onload = function () {
-            let ctx = document.getElementById('myCanvas').getContext("2d");
-            let img1 = document.getElementById('myCar');
-            let img2 = document.getElementById('myOctopus');
-            let img3 = document.getElementById('myBee');
-            let img4 = document.getElementById('myFish');
-            let img5 = document.getElementById('myQuai');
+        function DrawCar() {
             ctx.drawImage(img1, Car1.x, Car1.y, Car1.width, Car1.height)
-            ctx.drawImage(img2, 60, 200, 70, 70);
-            ctx.drawImage(img3, 700, 300, 70, 60);
-            ctx.drawImage(img4, 400, 50, 70, 60);
-            ctx.drawImage(img5, 300, 500, 70, 60);
-
         }
-        Ca1();
+        function DrawOctopus() {
+            ctx.drawImage(img2, 60, 200, 70, 70)
+        }
+        function DrawBee() {
+            ctx.drawImage(img3, 700, 300, 70, 60)
+        }
+        function DrawFish() {
+            ctx.drawImage(img4,400, 50, 70, 60)
+        }
+        function DrawQuai() {
+            ctx.drawImage(img5, 300, 500, 70, 60)
+        }
+
+        function update(){
+            ctx.clearRect(0,0,1000,600);
+            DrawCar();
+            DrawOctopus();
+            DrawBee();
+            DrawFish();
+            DrawQuai();
+            requestAnimationFrame(update);
+        }
+     
+      
         function moveRight() {
             Car1.x += 3;
         }
@@ -61,9 +77,10 @@
         function moveDown() {
             Car1.y += 3;
         }
-        // function speed() {
-
-        // }
+        function speed() {
+            car1.x += 20;
+           
+        }
 
 
         function keyDown(e) {
@@ -81,23 +98,14 @@
                 case 40:
                     moveDown();
                     break;
-                // case 17:
-                //     speed();
-                //     break;
+                case 17:
+                    speed();
+                    break;
 
             }
         }
         document.addEventListener("keydown", keyDown);
-
-
-
-
-
-
-    //    function reateCar(){
-    //        let image1 = document.getElementById('f1-car');
-    //        ctx.
-    //    }
+    update();
 
     </script>
 </body>

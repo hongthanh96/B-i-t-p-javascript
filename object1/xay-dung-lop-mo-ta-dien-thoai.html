@@ -1,27 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xây dựng mô tả điện thoại</title>
 </head>
+<html>
+
 <body>
-    <canvas id="myCanvas" width="1350px" height="650px" style="border: black 2px solid;"></canvas>
-    <img src="iphone.png" id="dt1" alt = "orro" width="200px" height = "300px" style="display: none;">
-    <img src="nokia.png" id="dt2" alt="orro" width="200px" height="300px" style="display: none;">
-
-
+    <h2>NOKIA</h2>
+    <P id="demo1"></P>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <br><br>
+    <h2>IPHONE</h2>
+    <p id="vd1"></p>
+    <p id='vd2'></p>
+    <p id="vd3"></p>
     <script>
-     
 
-     window.onload = function(){
-        let ctx = document.getElementById('myCanvas').getContext('2d')
-         let image = document.getElementById('dt1');
-         let image2 = document.getElementById('dt2');
-         ctx.drawImage(image,30,50,200,300)
-         ctx.drawImage(image2,300,50,200,300)
-     }
+        let onoff;
+        let mess;
+        do {
+            onoff = parseInt(prompt('Nhập 1 nếu  bạn muốn bật đt. 0 nếu muốn tắt: '));
+        }
+        while (onoff !== 1 && onoff !== 0)
+        if (onoff === 0) {
+            alert('Điện thoại đã tắt')
+        }
+        else {
+            mess = prompt('Nhập tin nhắn bạn muốn nhắn đến IPHONE: ')
+
+        }
+
+        function Nokia(pin) {
+            this.pin = pin;
+            this.messfrom = function () {
+                return mess;
+            }
+            this.messto = function () {
+
+                return 'Rỗng';
+            }
+        }
+
+        function Iphone(pin) {
+            this.pin = pin;
+            this.messfrom = function () {
+                return 'Rỗng';
+
+            }
+            this.messto = function () {
+                return mess;
+
+            }
+        }
+        let nok1 = new Nokia(100 + 'dv');
+        let ipon1 = new Iphone(100 + 'dv')
+
+        document.getElementById('demo2').innerHTML = ('Hộp thư đi: ' + nok1.messfrom());
+        document.getElementById('vd2').innerHTML = ('Hộp thư đi: ' + ipon1.messfrom());
+        document.getElementById('demo3').innerHTML = ('Hộp thư đên: ' + nok1.messto());
+        document.getElementById('vd3').innerHTML = ('Hộp thư đên: ' + ipon1.messto());
+
+        document.getElementById('demo1').innerHTML = ('Pin còn: ' + nok1.pin);
+        document.getElementById('vd1').innerHTML = ('pin còn: ' + ipon1.pin);
+
 
     </script>
 </body>
+
 </html>
