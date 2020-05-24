@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câu chuyện ADam Và Eva</title>
+</head>
+
+<body>
+
+    <script>
+        let Apple = function (weight) {
+            this.weight = weight;
+            this.getWeight = function () {
+                return this.weight;
+            }
+            this.decrease = function () {
+                if (this.weight > 0) {
+                    return this.weight--;
+                }
+            }
+            this.isEmpty =function(){
+                if (this.weight === 0) {
+                    return 'Hết'
+                }
+            }
+        }
+
+        let Human = function (say) {
+            this.setName = function (name) {
+                this.name = name;
+            }
+            this.getName = function () {
+                return this.name;
+            }
+            this.setWeight = function (weight) {
+                this.weight = weight;
+            }
+            this.getWeight = function () {
+                return this.weight;
+            }
+            this.male = function () {
+                this.isMale = true
+            }
+            this.female = function () {
+                this.isMale = false;
+            }
+            this.gender = function () {
+                if (this.isMale) {
+                    return 'Male'
+                }
+                else {
+                    return 'Female'
+                }
+            }
+            this.setGender = function () {
+                this.gender;
+            }
+            this.checkApple = function () {
+                    this.status = true;
+                }
+            this.emptyApple = function(){
+                this.status = false;
+            }
+            this.eat = function () {
+                if (this.status) {
+                    apple.weight--;
+                    this.weight++;
+                }
+            }
+            this.say = say;
+        }
+
+        let apple = new Apple(100);
+        apple.getWeight(100);
+
+        let Adam = new Human('"Hi! Do you want eat Apple?""');
+        Adam.setName('ADAM')
+        Adam.setWeight(60);
+        Adam.isMale = true;
+        Adam.status = true;
+
+        let Eva = new Human('"Yes, I want. And you?"');
+        Eva.setName('EVA')
+        Eva.setWeight(50)
+        Eva.isMale = false;
+        Eva.status = true;
+
+
+        console.log('Adam say: ' + Adam.say);
+        console.log ('Eva say: ' + Eva.say);
+        document.write(Adam.getName() + '<br>');
+        document.write('Tuổi: ' + Adam.getWeight() + '<br>');
+        document.write('Giới tính: ' + Adam.gender() + '<br>');
+        document.write('Cân nặng: ' + Adam.getWeight()+ ' kg <br>');
+        Adam.eat();
+        document.write('Adam ăn 1 miếng mất 1 đv <br>')
+        document.write('Khối lượng quả táo còn: ' + apple.weight + ' đv <br>') ;
+        document.write('Khối lượng Adam sau khi ăn táo tăng lên: ' + Adam.weight + '<br><br>')
+
+
+        document.write(Eva.getName()+ '<br>');
+        document.write('Tuổi: ' + Eva.getWeight() + '<br>');
+        document.write('Giới tính: ' + Eva.gender() + '<br>');
+        document.write('Cân nặng: ' + Eva.getWeight()+ ' kg <br>')
+        Eva.eat();
+        document.write('Eva ăn một miếng mất 1 đv <br>');
+        document.write('Khối lượng quả táo còn: ' + apple.weight + ' đv <br>') ;
+        document.write('Khối lượng Eva sau khi ăn táo tăng lên: ' + Eva.weight + '<br><br>')
+
+
+    </script>
+
+</body>
+
+</html>
