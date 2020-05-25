@@ -6,6 +6,63 @@
     <title>Document</title>
 </head>
 <body>
+    <div style="display: flex;">
+        <img src="switch-off.png" id="switch" alt="urro" width="300px" height="300px" >
+        <img src="lamp-off.png" id="lamp" alt="urro" width="300px" height="300px" >
+        <img src="switch-on.png" id="switch1" alt="urro" width="300px" height="300px" style="display: none;">
+        <img src="lamp-on.png" id="lamp1" alt="urro" width="300px" height="300px" style="display: none;" >
+
+    </div>
+    <div>
+        <br>
+        <button type="button" onclick="show()" style="margin-left: 100px;">On/Off</button>
+    </div>
+   
     
+    <script>
+        function SwitchButton(){
+            this.connectToLamp = function(){
+             lamp.status = this.status
+            }
+            this.switchOn = function(){
+                this.status = true;
+            }
+            this.switchOff = function(){
+                this.status = false;
+            }
+        }
+
+        function ElectricLamp(){
+            this.turOn = function(){
+               this.status = true;
+            }
+            this.turOff = function(){
+                this.status = false;
+            }
+        }
+
+        let button = new SwitchButton();
+        let lamp = new ElectricLamp();
+        button.status = false;
+
+        function show(){
+            if(button.status === true){
+                button.status = false;
+            }
+            else{
+                button.status = true;
+            }
+            button.connectToLamp();
+            if(button.status === false){
+                document.getElementById('switch').src = 'switch-off.png';
+                document.getElementById('lamp').src = 'lamp-off.png'
+            }
+            else{
+                document.getElementById('switch').src = 'switch-on.png';
+                document.getElementById('lamp').src = 'lamp-on.png';
+            }
+        }
+    
+    </script>
 </body>
 </html>
