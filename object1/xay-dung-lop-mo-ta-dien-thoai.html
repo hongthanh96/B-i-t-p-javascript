@@ -9,63 +9,113 @@
 <html>
 
 <body>
-    <h2>NOKIA</h2>
-    <P id="demo1"></P>
-    <p id="demo2"></p>
-    <p id="demo3"></p>
-    <br><br>
-    <h2>IPHONE</h2>
-    <p id="vd1"></p>
-    <p id='vd2'></p>
-    <p id="vd3"></p>
     <script>
 
-        let onoff;
-        let mess;
-        do {
-            onoff = parseInt(prompt('Nhập 1 nếu  bạn muốn bật đt. 0 nếu muốn tắt: '));
-        }
-        while (onoff !== 1 && onoff !== 0)
-        if (onoff === 0) {
-            alert('Điện thoại đã tắt')
-        }
-        else {
-            mess = prompt('Nhập tin nhắn bạn muốn nhắn đến IPHONE: ')
-
-        }
-
-        function Nokia(pin) {
-            this.pin = pin;
-            this.messfrom = function () {
-                return mess;
+        function Nokia() {
+            this.setpin = function (pin) {
+                this.pin = pin;
             }
-            this.messto = function () {
-
-                return 'Rỗng';
+            this.getpin = function () {
+                return this.pin;
             }
-        }
-
-        function Iphone(pin) {
-            this.pin = pin;
-            this.messfrom = function () {
-                return 'Rỗng';
+            this.setMess = function (mess) {
+                this.mess = mess;
+            }
+            this.getmessfrom = function () {
+                return this.mess;
+            }
+            this.decrease = function () {
+                if (this.status = true && this.pin > 0) {
+                    return this.pin--;
+                }
+            }
+            this.checkMobile = function () {
+                if (this.status) {
+                    return 'ON'
+                }
+                else {
+                    return 'OFF'
+                }
 
             }
-            this.messto = function () {
-                return mess;
-
+            this.on = function () {
+                this.status = true;
+            }
+            this.off = function () {
+                this.status = false;
             }
         }
-        let nok1 = new Nokia(100 + 'dv');
-        let ipon1 = new Iphone(100 + 'dv')
+        function Iphone() {
+            this.setpin = function (pin) {
+                this.pin = pin;
+            }
+            this.getpin = function () {
+                return this.pin
+            }
+            this.setMess = function (mess) {
+                this.mess = mess;
+            }
+            this.getmessfrom = function () {
+                return this.mess;
+            }
+            this.decrease = function () {
+                if (this.status = true && this.pin > 0) {
+                    return this.pin--;
+                }
+            }
+            this.checkMobile = function () {
+                if (this.status) {
+                    return 'ON'
+                }
+                else {
+                    return 'OFF'
+                }
 
-        document.getElementById('demo2').innerHTML = ('Hộp thư đi: ' + nok1.messfrom());
-        document.getElementById('vd2').innerHTML = ('Hộp thư đi: ' + ipon1.messfrom());
-        document.getElementById('demo3').innerHTML = ('Hộp thư đên: ' + nok1.messto());
-        document.getElementById('vd3').innerHTML = ('Hộp thư đên: ' + ipon1.messto());
+            }
+            this.onMob = function () {
+                this.status = true;
+            }
+            this.off = function () {
+                this.status = false;
+            }
+        }
 
-        document.getElementById('demo1').innerHTML = ('Pin còn: ' + nok1.pin);
-        document.getElementById('vd1').innerHTML = ('pin còn: ' + ipon1.pin);
+
+        let nokia = new Nokia();
+        nokia.setpin(100);
+        nokia.setMess('Xin chào. Mình có thể nói chuyện được không!')
+        this.status = true;
+
+        let iphone = new Iphone();
+        iphone.setpin(100);
+        iphone.setMess('WOW..! Bạn tên là gi? bao nhiêu tuổi oy..')
+        this.status = true;
+
+        document.write('NOKIA <br>');
+        document.write('PIN: ' + nokia.getpin() + '% <br>');
+        document.write('On/Off: ' + nokia.checkMobile() + '<br>');
+        document.write('Hộp thư đi: ' + nokia.getmessfrom() + '<br>');
+        nokia.decrease()
+        document.write('Pin sau khi sử dụng gửi tin nhắn còn: ' + nokia.getpin() + '% <br>');
+        nokia.decrease();
+        document.write('Hộp thứ đến: ' + iphone.getmessfrom() + '<br>');
+        document.write('Pin sau khi sử dụng nhận tin nhắn còn: ' + nokia.getpin() + '% <br><br>');
+
+
+        document.write('IPHONE <br>');
+        document.write('PIN: ' + iphone.getpin() + '% <br>');
+        document.write('On/Off: ' + iphone.checkMobile() + '<br>');
+        document.write('Hộp thứ đên: ' + nokia.getmessfrom() + '<br>');
+        iphone.decrease();
+        document.write('Pin sau khi sử dụng nhận tin nhắn còn: ' + iphone.getpin() + '% <br>');
+
+        document.write('Hộp thư đi: ' + iphone.getmessfrom() + '<br>');
+        iphone.decrease();
+        document.write('Pin sau khi sử dụng gửi tin nhắn còn: ' + iphone.getpin() + '% <br><br>');
+
+
+
+
 
 
     </script>

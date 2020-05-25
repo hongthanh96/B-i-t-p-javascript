@@ -11,29 +11,18 @@
     <div id="game"></div>
 
     <script>
-        /**
- * Created by nhatnk on 4/26/17.
- */
 
         function Hero(image, top, left, size, speed) {
             this.image = image;
             this.top = top;
             this.left = left;
             this.size = size;
-            this.speed = speed
+            this.speed = speed;
             this.getHeroElement = function () {
                 return '<img width="' + this.size + '"' +
                     ' height="' + this.size + '"' +
                     ' src="' + this.image + '"' +
                     ' style="top: ' + this.top + 'px; left:' + this.left + 'px;position:absolute;" />';
-            }
-
-            this.moveRight = function () {
-                this.left += this.speed;
-                console.log('ok: ' + this.left);
-            }
-            this.moveDown = function () {
-                this.top += this.speed;
             }
 
 
@@ -43,31 +32,21 @@
 
         function start() {
 
-            // do{
-                // hero.moveRight();
-                // hero.moveLeft()
-                // hero.moveUp();
-                // hero.moveDown();
-            // }
-            // while(hero.left < window.innerWidth - hero.size && hero.top < window.innerHeight - hero.size)
-            hero.moveRight();
-            if (hero.left > window.innerWidth - hero.size || hero.left < 0 ) {
-               hero.speed *= -1;
+            if(hero.left < (window.innerWidth - hero.size) && hero.top <= 20) {
+                hero.left += hero.speed;
             }
-           
-            hero.moveDown();
-            if (hero.top > window.innerHeight - hero.size || hero.top < 0){
-                hero.speed *= -1;
-            }
-            
-            // else{
-            //    hero.moveLeft()
-            //     hero.moveUp();
-            //     hero.moveDown();
-            // }
 
+            if(hero.left > (window.innerWidth - hero.size) && hero.top < (window.innerHeight - hero.size)) {
+                hero.top += hero.speed;
+            }
+            if (hero.left >= 30 && hero.top > (window.innerHeight - hero.size)){
+                hero.left -= hero.speed;
+            }
+            if (hero.left <= 30 && hero.top >= 20){
+                hero.top -= hero.speed;
+            }
             document.getElementById('game').innerHTML = hero.getHeroElement();
-            setTimeout(start, 500)
+            setTimeout(start, 500);
         }
 
         start();

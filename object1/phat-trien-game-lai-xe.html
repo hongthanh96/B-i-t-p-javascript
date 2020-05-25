@@ -9,7 +9,11 @@
 
 <body>
     <canvas id="myCanvas" width="1000" height="600" style="border: black 1px solid;"></canvas>
-    <img src="f1-car.png" alt="urro" id="myCar" style="display: none;">
+    <img src="f1-car (1).png" alt="urro" id="myCar" style="display: none;">
+    <img src="car-left.png" alt="urro" id="myCar1" style="display: none;">
+    <img src="car-up.png" alt="urro" id="myCar3" style="display: none;">
+    <img src="car-down.png" alt="urro" id="myCar4" style="display: none;">
+
     <img src="octopus.png" alt="urro2" id="myOctopus" style="display: none;">
     <img src="bee.png" alt="urro3" id="myBee" style="display: none;">
     <img src="fish.png" alt="urro4" id="myFish" style="display: none;">
@@ -25,7 +29,7 @@
             let img5 = document.getElementById('myQuai');
 
 
-        function Car(x, y, width, height) {
+        function Car(x, y, width, height,speed) {
             this.x = x,
                 this.y = y,
                 this.width = width,
@@ -33,7 +37,7 @@
                 this.speed = 2
         }
 
-        let Car1 = new Car(200, 200, 300, 300);
+        let Car1 = new Car(200, 200, 200, 200);
 
 
 
@@ -66,19 +70,24 @@
      
       
         function moveRight() {
-            Car1.x += 3;
+            Car1.x += Car1.speed;
+            document.getElementById('myCar').src = 'f1-car (1).png'
+          
         }
         function moveLeft() {
-            Car1.x -= 3;
+            Car1.x -= Car1.speed;
+            document.getElementById('myCar').src = 'car-left.png'
         }
         function moveUp() {
-            Car1.y -= 3;
+            Car1.y -= Car1.speed;
+            document.getElementById('myCar').src = 'car-up.png'
         }
         function moveDown() {
-            Car1.y += 3;
+            Car1.y += Car1.speed;
+            document.getElementById('myCar').src = 'car-down.png'
         }
         function speed() {
-            car1.x += 20;
+            Car1.speed += 2;
            
         }
 
