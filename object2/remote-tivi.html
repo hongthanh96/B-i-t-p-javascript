@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote TV</title>
+</head>
+<body>
+    <script>
+        class Remote{
+            constructor(id){
+                this.id = id;
+            }
+            controlchannel(channel){
+                tivi.channel = channel;
+                console.log( 'Remote điều khiển chuyển sang kênh: ' + channel);
+            }
+            controlvolume(volume){
+                tivi.volume = volume
+                console.log( 'Remote Điều khiển tăng âm lượng lên: ' + volume);
+            }
+
+        }
+
+        class Tivi{
+            constructor(channel,volume,status){
+                this.channel = channel;
+                this.volume = volume;
+                this.status = status;
+            }
+            OnOff() {
+                if(this.status){
+                    console.log ('Trạng thái TV: Bật');
+                }
+                else{
+                    console.log('Trạng thái TV: Tắt');
+                }
+                
+            }
+            changechanel(){
+                console.log('Kênh TV chuyển sang:' + tivi.channel);
+            }
+            changevolume(){
+                console.log('Âm lượng TV tăng lên: '+ tivi.volume);
+            }
+        }
+        let remote = new Remote('SAM SUNG');
+        let tivi = new Tivi(7,20,true);
+ 
+
+      
+        console.log('TV: '+ remote.id);
+        tivi.OnOff();
+        console.log ('Kênh hiện tại ' + tivi.channel)
+        remote.controlchannel(3);
+        tivi.changechanel();
+        remote.controlvolume(tivi.volume + 2);
+        tivi.changevolume();
+        this.status = false;
+        tivi.OnOff();
+
+
+    </script>
+    
+</body>
+</html>
