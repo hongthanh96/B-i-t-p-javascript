@@ -1,37 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tic tac toe</title>
 </head>
-<style>
-    table, tr, td{
-        border: black 2px solid;
-        border-collapse: collapse;
-    }
-    button{
-        width: 30px;
-        height: 30px;
-    }
-    table{
-        width: 300px;
-        height: 300px;
-    }
-</style>
+
 <body>
+    <h1>Caro Game Simple</h1>
+    <p id='carogame'></p>
+    <div>
+        <button type="button" onclick="mem1()">Gamer 1</button>
+        <button type="button" onclick="mem2()">Gamer 2</button>
+    </div>
+    <!-- <input type="button" width="30px" height="30px" value="."> -->
+
     <script>
-       
-        let tbl="<table>"
-        for(let i = 0; i < 10; i++){
-            tbl += '<tr>'
-            for(j = 0; j < 10; j++){
-               tbl += '<td>' + '<button onclick = myfunction()></button>' + '</td>'
+        let data = '';
+        let array = [];
+        let check = false;
+        for (let i = 0; i < 5; i++) {
+            array[i] = [];
+            for (let j = 0; j < 5; j++) {
+                array[i][j] = '.';
             }
-            tbl += '</tr>'
         }
-        tbl += '</table>'
-        document.write(tbl)
+        drawTable = function () {
+            let str = "<table>";
+            for (let i = 0; i < 5; i++) {
+                str += '<tr>';
+                for (let j = 0; j < 5; j++) {
+                    str += '<td>' + '<input type="button" width="50px" height="50px" value="' + array[i][j] + '"></td>';
+                }
+                str += '</tr>';
+            }
+            str += '</table>'
+            document.getElementById('carogame').innerHTML = str;
+        }
+        drawTable();
+        function mem1() {
+            let positionX = parseInt(prompt('X: '));
+            let positionY = parseInt(prompt('Y: '));
+            data = ''
+            array[positionX][positionY] = 'X';
+            drawTable();
+            check = checkWin(positionX, positionY);
+            if (check){
+                alert('mem1 thắng')
+            }
+
+        }
+        function mem2() {
+            let positionX = parseInt(prompt('X: '));
+            let positionY = parseInt(prompt('Y: '));
+            data = ''
+            array[positionX][positionY] = '0';
+            drawTable();
+            check = checkWin(positionX,positionY);
+            if (check){
+                alert('mem2 thắng')
+
+            }
+        }
+        function checkWin(i, j) {
+            if ((array[i][j] == array[i][j + 1] && array[i][j + 1] == array[i][j + 2]) ||
+                (array[i][j] == array[i][j - 1] && array[i][j - 1] == array[i][j - 2]) ||
+                (array[i][j - 1] == array[i][j] && array[i][j] == array[i][j + 1]) ||
+
+                (array[i][j] == array[i + 1][j] && array[i + 1][j] == array[i + 2][j]) ||
+                (array[i][j] == array[i - 1][j] && array[i - 1][j] == array[i - 2][j]) ||
+                (array[i - 1][j] == array[i][j] && array[i][j] == array[i + 1][j]) ||
+
+                (array[i][j] == array[i + 1][j + 1] && array[i + 1][j + 1] == array[i + 2][j + 2]) ||
+                (array[i][j] == array[i - 1][j - 1] && array[i - 1][j - 1] == array[i - 2][j - 2]) ||
+                (array[i + 1][j + 1] == array[i][j] && array[i][j] == array[i - 1][j - 1]) ||
+
+                (array[i][j] == array[i + 1][j - 1] && array[i + 1][j - 1] == array[i + 2][j - 2]) ||
+                (array[i][j] == array[i - 1][j + 1] && array[i - 1][j + 1] == array[i - 2][j + 2]) ||
+                (array[i + 1][j - 1] == array[i][j] && array[i][j] == array[i+2][j-2])
+
+            ) 
+            return true;
+            else{
+                return false;
+            }
+           
+        }
     </script>
 </body>
+
 </html>
