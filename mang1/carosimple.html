@@ -1,28 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tạo bàn cờ caro đơn giản</title>
 </head>
+
 <body>
-     <h1>Caro Game Simple</h1>
-     <p id = 'container'></p>
-     <button type="button" value="Change Value" onclick="myfunction">Change Value</button>
-     <script>
-        let array = [ ];
-        let row = 5;
-        let col = 5;
-        for (let i = 0 ; i < row ; i++){
-            array[i] = [];
-            for (let j = 0; j < col; j++){
-                array[i][j] = "0"
+    <h1>Caro Game Simple</h1>
+    <p id='carogame'></p>
+
+
+    <script>
+        let array = [];
+        let data = '';
+        for (let i = 0; i < 5; i++) {
+            array[i] = ['0', '0', '0', '0','0' ];
+        }
+        for (let i = 0; i < 5; i++) {
+            data += '<br>'
+            for (let j = 0; j < 5; j++) {
+                data += array[i][j] + '&nbsp;&nbsp;';
             }
         }
-        document.getElementById('container').innerHTML = array;
+        data += '<br><br><input type="button" value="Chang Value" onclick="changvalue()">'
+
+        document.getElementById('carogame').innerHTML = data;
+
+        function changvalue() {
+            let positionX = parseInt(prompt('X: '));
+            let positionY = parseInt(prompt('Y'));
+            data = '';
+            array[positionX][positionY] = 'X';
+            for (let i = 0; i < 5; i++) {
+                data += '<br>'
+                for (let j = 0; j < 5; j++) {
+                    data += array[i][j] + '&nbsp;&nbsp;&nbsp;&nbsp;';
+                }
+            }
+            data += '<br><br><input type="button" value="Chang Value" onclick="changvalue()">'
+            document.getElementById('carogame').innerHTML = data;
+
+
+        }
 
     </script>
-    
+
 
 </body>
+
 </html>

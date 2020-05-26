@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tic tac toe</title>
+</head>
+<style>
+    table, tr, td{
+        border: black 2px solid;
+        border-collapse: collapse;
+    }
+    button{
+        width: 30px;
+        height: 30px;
+    }
+    table{
+        width: 300px;
+        height: 300px;
+    }
+</style>
+<body>
+    <script>
+       
+        let tbl="<table>"
+        for(let i = 0; i < 10; i++){
+            tbl += '<tr>'
+            for(j = 0; j < 10; j++){
+               tbl += '<td>' + '<button onclick = myfunction()></button>' + '</td>'
+            }
+            tbl += '</tr>'
+        }
+        tbl += '</table>'
+        document.write(tbl)
+    </script>
+</body>
+</html>
