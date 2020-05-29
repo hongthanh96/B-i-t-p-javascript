@@ -1,0 +1,139 @@
+@import url('https://fonts.google.com/specimen/Josefin+Sans');
+
+:root{
+    --primary-color: hsl(0,36%, 70%);
+    --second-color:  hsl(0, 6%, 24%);
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    background-image: url('images/bg-pattern-desktop.svg');
+    background-size: cover;
+    background-position: center center;
+    font-family: "Josefin+Sans",sans-serif;
+}
+.container {
+    display: flex;
+    min-height: 100vh;
+    /* padding: 0 150px; */
+}
+.container-left{
+    width: 60%;
+}
+.container-right{
+    width: 40%;
+}
+.container-main{
+   text-align: center;
+   margin: auto;
+   padding: 0 40px;
+}
+.bg-image {
+    background-image: url("images/hero-desktop.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+.logo{
+    margin: 60px 40px;
+    font-weight: 200;
+}
+h1{
+    color: var(--second-color);
+    font-size: 60px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    transform: translateX(-100%);
+    animation: leftcomin 0.5s linear forwards;
+}
+@keyframes leftcomin{
+    to{
+        transform: translateX(0);
+    }
+}
+h1 span{
+    color: var(--primary-color);
+    font-weight: 200;
+    
+}
+p{
+    color: var(--primary-color);
+    letter-spacing: 1px;
+    line-height: 25px;
+    padding: 30px 0px;
+    transform: translateX(100%);
+    animation: leftcomin 0.5s linear forwards;
+}
+@keyframes rightcomin{
+    to{
+        transform: translateX(0);
+    }
+}
+form{
+    position: relative;
+    transform: translateX(-100%);
+    animation: rightcomin 0.5s linear forwards;
+}
+input{
+    border: 1px solid var(--primary-color);
+    border-radius: 50px;
+    height: 55px;
+    width: 100%;
+    padding: 15px;
+
+}
+input::placeholder{
+    color: var(--primary-color);
+}
+input:focus{
+    outline: none;
+    box-shadow: 0px 0px 10px;
+}
+button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 55px;
+    border: none;
+    border-radius: 50px;
+    background-image: linear-gradient(135deg,hsl(0, 80%, 86%),  hsl(0, 74%, 74%));
+}
+button:hover{
+    opacity: 0.6;
+}
+.erro-icon{
+    position: absolute;
+    top: 15px;
+    right: 110px;
+}
+small{
+    color: hsl(0, 93%, 68%);
+    display: block;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.hero{
+    display: none;
+}
+
+@media (max-width: 575px){
+    .hero{
+        display: block;
+    }
+    .container-right{
+        display: none;
+    }
+    .container-left{
+        width: 100%;
+    }
+    .hero{
+        display: block;
+        margin-left: -40px;
+        margin-right: -40px;
+        width: calc(100% + 80px);
+    }
+}
